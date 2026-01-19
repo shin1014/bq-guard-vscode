@@ -1,0 +1,22 @@
+[project]
+name = "bq-guard"
+version = "0.1.0"
+description = "BigQuery guardrails for safe execution"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "google-cloud-bigquery",
+  "pyyaml",
+  "platformdirs",
+]
+
+[project.scripts]
+bq-guard = "bq_guard.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,48 @@
+{
+  "name": "bq-guard",
+  "displayName": "BQ Guard",
+  "description": "BigQuery guardrails for safe execution",
+  "version": "0.1.0",
+  "publisher": "bq-guard",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:bqGuard.openPanel",
+    "onCommand:bqGuard.estimate",
+    "onCommand:bqGuard.review",
+    "onCommand:bqGuard.export",
+    "onCommand:bqGuard.settings",
+    "onCommand:bqGuard.refreshMetadata",
+    "onCommand:bqGuard.showHistory"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {"command": "bqGuard.openPanel", "title": "BQ Guard: Open Panel"},
+      {"command": "bqGuard.estimate", "title": "BQ Guard: Estimate"},
+      {"command": "bqGuard.review", "title": "BQ Guard: Review"},
+      {"command": "bqGuard.execute", "title": "BQ Guard: Execute"},
+      {"command": "bqGuard.export", "title": "BQ Guard: Export"},
+      {"command": "bqGuard.settings", "title": "BQ Guard: Settings"},
+      {"command": "bqGuard.refreshMetadata", "title": "BQ Guard: Refresh Metadata Cache"},
+      {"command": "bqGuard.showHistory", "title": "BQ Guard: Show History"}
+    ],
+    "keybindings": [
+      {"command": "bqGuard.estimate", "key": "ctrl+e"},
+      {"command": "bqGuard.review", "key": "ctrl+enter"},
+      {"command": "bqGuard.export", "key": "ctrl+s"},
+      {"command": "bqGuard.settings", "key": "ctrl+,"},
+      {"command": "bqGuard.refreshMetadata", "key": "ctrl+m"}
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.3.3"
+  }
+}
